@@ -1,0 +1,11 @@
+tensorflow_gpu==2.2.0
+numpy==1.18.5
+requests==2.22.0
+matplotlib==3.3.0
+dataclasses==0.8
+Pillow==8.1.2
+PyPDF2==1.26.0
+PyYAML==5.4.1
+scikit_learn==0.24.1
+tensorflow==2.4.1
+streamlit==0.78.0
