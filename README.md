@@ -1,3 +1,30 @@
+# PDF Demo 
+Usage
+
+```python3.8
+import pdemo as D
+
+# Download data into the .cache in the datasets folder
+D.datasets.pdfs.download()
+
+# Extract images from the pdfs in the cache
+df = D.datasets.preprocessing_toolbox.extract_images_from_pdfs() 
+
+# Scrub out any that may have had an issue loading
+df = df.loc[~df.errors]
+
+# Setup a model build
+E = D.neural.model.SetupTrainingParticulars(df = df) 
+
+E.kickoff_training_run()
+
+# wait for neural net to train 
+E.save_model()
+```
+
+
+```bash
+tree
 .
 ├── README.md
 ├── __init__.py
@@ -72,3 +99,4 @@
         └── ch_streamlit_app.py
 
 15 directories, 56 files
+```
