@@ -1,27 +1,48 @@
 # PDF Demo 
-Usage
+
+## Tools used
+
+- tensorflow_gpu==2.2.0
+- numpy==1.18.5
+- requests==2.22.0
+- matplotlib==3.3.0
+- dataclasses==0.8
+- Pillow==8.1.2
+- PyPDF2==1.26.0
+- PyYAML==5.4.1
+- scikit_learn==0.24.1
+- tensorflow==2.4.1
+- streamlit==0.78.0
+
+... as well as Blender
+
+## Usage
 
 ```python3.8
 import pdemo as D
 
-# Download data into the .cache in the datasets folder
+### Download data into the .cache in the datasets folder
 D.datasets.pdfs.download()
 
-# Extract images from the pdfs in the cache
+### Extract images from the pdfs in the cache
 df = D.datasets.preprocessing_toolbox.extract_images_from_pdfs() 
 
-# Scrub out any that may have had an issue loading
+### Scrub out any that may have had an issue loading
 df = df.loc[~df.errors]
 
-# Setup a model build
+### Setup a model build
 E = D.neural.model.SetupTrainingParticulars(df = df) 
 
 E.kickoff_training_run()
 
-# wait for neural net to train 
+### Wait for neural net to train 
 E.save_model()
+
+
+##
 ```
 
+## Module Topology
 
 ```bash
 tree
