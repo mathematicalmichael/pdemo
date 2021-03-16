@@ -13,8 +13,20 @@
 - scikit_learn==0.24.1
 - tensorflow==2.4.1
 - streamlit==0.78.0
+- Blender (Not python, used to make the video)
+## How to run the streamlit app (bash install and kickoff streamlit
 
-... as well as Blender
+All you need to do is to do a pip install and then point streamlit at the 
+python app file
+
+```bash
+pip install streamlit
+
+cd /<where you downloaded it>pdemo/scripts/streamlit
+
+streamlit run ch_streamlit_app.py
+```
+
 
 ## Usage
 
@@ -42,7 +54,7 @@ E.save_model()
 ##
 ```
 
-## Module Topology
+## Directory Topology
 
 ```bash
 tree
