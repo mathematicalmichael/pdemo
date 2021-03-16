@@ -18,7 +18,7 @@
 
 ## Usage
 
-```python3.8
+```python
 import pdemo as D
 
 ### Download data into the .cache in the datasets folder
