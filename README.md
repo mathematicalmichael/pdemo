@@ -14,12 +14,13 @@
 - tensorflow==2.4.1
 - streamlit==0.78.0
 - Blender (Not python, used to make the video)
-## How to run the streamlit app (bash install and kickoff streamlit
+## How to run the streamlit app 
 
-All you need to do is to do a pip install and then point streamlit at the 
-python app file
+All you need to do is a pip install and then point streamlit at the 
+python app file.
 
 ```bash
+# bash/zsh
 pip install streamlit
 
 cd /<where you downloaded it>pdemo/scripts/streamlit
@@ -28,7 +29,7 @@ streamlit run ch_streamlit_app.py
 ```
 
 
-## Usage
+## Usage - Python
 
 ```python
 import pdemo as D
@@ -52,6 +53,12 @@ E.save_model()
 
 
 ##
+```
+
+## Pdf Download Config File
+
+```
+./pdemo/datasets/_pdfs_metadata.yaml
 ```
 
 ## Directory Topology
