@@ -11,7 +11,7 @@ _ROOT = pathlib.Path(__file__).parent
 # pd.options.display.float_format = "{:,.4f}".format
 my_devices = tf.config.experimental.list_physical_devices(device_type="CPU")
 tf.config.experimental.set_visible_devices(devices=my_devices, device_type="CPU")
-import pdemo as D
+import . as D
 
 ############################################################################
 # Load model and multilabel binarizer
