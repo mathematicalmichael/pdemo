@@ -15,7 +15,11 @@ import pdemo as D
 
 ############################################################################
 # Load model and multilabel binarizer
-plat = D.neural.model.PredictorForStreamlit()
+@st.cache
+def load_model():
+    return D.neural.model.PredictorForStreamlit()
+
+plat = load_model()
 
 # Designing the interface
 st.sidebar.title("Stylistic Search")
