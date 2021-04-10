@@ -1,3 +1,70 @@
+# PDF Demo 
+
+## Tools used
+
+- tensorflow_gpu==2.2.0
+- numpy==1.18.5
+- requests==2.22.0
+- matplotlib==3.3.0
+- dataclasses==0.8
+- Pillow==8.1.2
+- PyPDF2==1.26.0
+- PyYAML==5.4.1
+- scikit_learn==0.24.1
+- tensorflow==2.4.1
+- streamlit==0.78.0
+- Blender (Not python, used to make the video)
+## How to run the streamlit app 
+
+All you need to do is a pip install and then point streamlit at the 
+python app file.
+
+```bash
+# bash/zsh
+pip install streamlit
+
+cd /<where you downloaded it>pdemo/scripts/streamlit
+
+streamlit run ch_streamlit_app.py
+```
+
+
+## Usage - Python
+
+```python
+import pdemo as D
+
+### Download data into the .cache in the datasets folder
+D.datasets.pdfs.download()
+
+### Extract images from the pdfs in the cache
+df = D.datasets.preprocessing_toolbox.extract_images_from_pdfs() 
+
+### Scrub out any that may have had an issue loading
+df = df.loc[~df.errors]
+
+### Setup a model build
+E = D.neural.model.SetupTrainingParticulars(df = df) 
+
+E.kickoff_training_run()
+
+### Wait for neural net to train 
+E.save_model()
+
+
+##
+```
+
+## Pdf Download Config File
+
+```
+./pdemo/datasets/_pdfs_metadata.yaml
+```
+
+## Directory Topology
+
+```bash
+tree
 .
 ├── README.md
 ├── __init__.py
@@ -72,3 +139,4 @@
         └── ch_streamlit_app.py
 
 15 directories, 56 files
+```
